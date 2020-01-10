@@ -1,0 +1,144 @@
+header{
+    width: 40%;
+    height:80px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 20px;
+    padding-top: 30px;
+}
+h1{
+    line-height: 10px;
+}
+.leftSide{
+        display: flex;
+        width: 70%;
+        flex-wrap: wrap;
+        display: flex;  
+        flex-wrap: wrap;    
+        
+    }
+    
+.card{
+    border: 2px solid #000;
+    display:flex;
+    width: 250px;
+    height: 300px;
+    flex-direction: column;
+    margin-right:3%;
+    margin-bottom: 25px;
+    padding:15px;
+}
+.card-img{
+    width: 180px;
+    margin: 0 auto;
+    height: 150px;
+    margin-bottom:1%;
+    padding-left:0px;
+    border: 1px solid #000;
+    
+}
+.card-p{
+    margin-top: 10px;
+    text-align: center;
+    
+}
+.types{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: space-around;
+}
+.type{
+    padding:4px;
+    border-radius: 4px;
+    text-align: center;
+    margin-right: 3px;
+    width: 70px;
+}
+
+.type-fire{
+    background: #ffb0b0;
+}
+.type-poison{
+    background: #dec5e8;
+}
+.type-grass{
+    background: #d0f2c7;
+}
+.type-flying{
+    background: #96ebeb;
+}
+.type-water{
+    background: #291bf2;
+}
+.type-bug{
+    background: #ffb0b0;
+}
+.type-fighting{
+    background: #db2307;
+}
+.type-ground{
+    background: #185e01;
+}
+.type-rock{
+background: #727571;
+}
+.type-ghost{
+background:#c5c7c5;
+}
+.type-steel{
+background: rgb(146, 132, 132);
+}
+.type-electric{
+background: rgb(219, 202, 105);
+}
+.type-psychic{
+    background: rgb(238, 230, 125);
+}
+.type-ice{
+    background: rgb(19, 78, 241);
+}
+.type-dragon{
+    background: rgb(223, 47, 47);
+}
+.type-dark{
+    background: rgb(77, 76, 76);
+}
+.type-fairy{
+    background: rgb(111, 243, 144);
+}
+.type-unknow{
+    background: rgb(114, 0, 0);
+}
+.type-shadow{
+    background: rgb(172, 168, 168);
+}
+.type-normal{
+    background: rgb(236, 235, 235);
+}
+.loadMore{
+    width: 400px;
+    margin-left:100px;
+    margin: 0 auto;
+    
+}
+.extendCard{
+border: 1px solid #000;
+margin: 0 auto;
+width: 300px;
+padding: 4%;
+margin-bottom: 2%;
+}
+table{
+    margin: 0 auto;
+}
+td{
+    text-align: center;
+}
+tr{
+    width: 300px;
+}
+
+
