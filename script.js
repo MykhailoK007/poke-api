@@ -116,7 +116,7 @@ function createExtendCard(data) {
     // cardBox.classList.add('col-7');
     cardBox.classList.add('extendCard');
 
-    img.classList.add('card-img');
+    img.classList.add('card-img-extend');
     img.classList.add('col-12')
     name.classList.add('card-p');
 
