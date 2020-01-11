@@ -1,17 +1,20 @@
 let cardList = [];
 let pokemonJsonList = [];
 let url = 'https://pokeapi.co/api/v2/pokemon/?limit=12';
-
+let typeUrl = 'http://pokeapi.co/api/v2/type/?limit=999';
 
 getAllPokemons(url);
-
+getListOfTypes(typeUrl);
 //Gets limit pokemon list with length=12
 async function getAllPokemons(otherUrl) {
 
-    const res = await fetch(url);
-    const data = await res.json();
-    console.log(data)
-    const pokemons = data.results.map((element, index) => ({
+    const response = await fetch(url);
+    if (response.status !== 200) {
+        console.log(response.status);
+        return;
+    }
+    const data = await response.json();
+    const pokemons = data.results.map((element) => ({
         name: element.name,
         url: element.url
 
@@ -33,8 +36,12 @@ async function getAllPokemons(otherUrl) {
 //This function get personal information about card
 async function getPersonalCard(personalUrl) {
 
-    let responce = await fetch(personalUrl);
-    let data = await responce.json();
+    let response = await fetch(personalUrl);
+    if (response.status !== 200) {
+        console.log(response.status);
+        return;
+    }
+    let data = await response.json();
     createCard(data);
 
 
@@ -223,9 +230,61 @@ function createTable(data, div) {
 
 }
 
+async function getListOfTypes(url) {
+    const response = await fetch(url);
+    const data = await response.json();
+    if (response.status !== 200) {
+        console.log(response.status);
+        return;
+    }
+    let typesLength = data.results.length;
+    let select = document.querySelector('select');
+    for (let i = 0; i < typesLength; i++) {
+        let option = document.createElement('option');
+        option.value = data.results[i].url;
+        option.innerHTML = changeName(data.results[i].name);
+        option.dataset.urls = data.results[i].url;
+        select.append(option);
+
+
+    }
 
 
 
+}
+
+document.querySelector('select').onchange = (e) => {
+    getTypesbyFilter(e.target.value);
+    document.querySelector('.returnMode').style.display = 'block';
+    document.querySelector('.loadMore').style.display = 'none';
 
 
+}
+async function getTypesbyFilter(url) {
+    const response = await fetch(url);
+    if (response.status !== 200) {
+        console.log(response.status);
+        return;
+    }
+    const data = await response.json();
+    document.querySelector('.leftSide').innerHTML = '';
+    console.log(data);
+    const pokemons = data.pokemon.map((element) => ({
+        name: element.pokemon.name,
+        url: element.pokemon.url
 
+    }));
+    for (let i = 0; i < pokemons.length; i++) {
+        getPersonalCard(pokemons[i].url);
+
+
+    }
+}
+
+document.querySelector('.returnMode').onclick = function () {
+    document.querySelector('.leftSide').innerHTML = '';
+    document.querySelector('.returnMode').style.display = 'none';
+    getAllPokemons(url);
+    getListOfTypes(typeUrl);
+    document.querySelector('.loadMore').style.display = 'block';
+};
