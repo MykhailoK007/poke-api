@@ -25,7 +25,10 @@ select{
         display: flex;  
         flex-wrap: wrap;    
         
-    }
+}
+.rightSide{
+    padding-bottom:200px;
+}
     
 .card{
     border: 2px solid #000;
@@ -134,12 +137,16 @@ background: rgb(219, 202, 105);
     
 }
 .extendCard{
-border: 2px solid #000;
-margin: 0 auto;
-width: 300px;
-padding: 4%;
-margin-bottom: 2%;
-position: fixed;
+    border: 2px solid #000;
+    margin: 0 auto;
+    width: 300px;
+    position: fixed;
+    height: auto;
+    padding: 4%;
+    margin:100px 0 100px 0;
+    top:0px;
+
+display: none;
 
 }
 table{
@@ -147,6 +154,8 @@ table{
 }
 td{
     text-align: center;
+    border: 1px solid black;
+    padding: 3px;
 }
 tr{
     width: 300px;
@@ -158,6 +167,10 @@ tr{
     margin-bottom:1%;
     margin-left: 5%;
     
+}
+.card-p-extend{
+    text-align: center;
+    margin-top: 10px;
 }
 
 
